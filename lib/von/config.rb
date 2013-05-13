@@ -46,7 +46,7 @@ module Von
     #
     # Returns the Redis client
     def redis=(arg)
-      if arg.is_a? Redis
+      if arg.is_a?(Redis) || arg.is_a?(Redis::Namespace)
         @redis = arg
       else
         @redis = Redis.new(arg)
